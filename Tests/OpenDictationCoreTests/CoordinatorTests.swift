@@ -199,7 +199,8 @@ final class CoordinatorTests: XCTestCase {
         XCTAssertEqual(coordinator.activeSession?.phase, .canceled)
         XCTAssertTrue(recorder.cancelled)
         try await Task.sleep(nanoseconds: 100_000_000)
-        XCTAssertEqual((await provider.requests).count, 0)
+        let requests = await provider.requests
+        XCTAssertEqual(requests.count, 0)
         XCTAssertNil(coordinator.activeSession?.transcript)
     }
 
@@ -257,7 +258,8 @@ final class CoordinatorTests: XCTestCase {
         coordinator.retry(sessionID: coordinator.activeSession!.id)
         try await waitForPhase(coordinator, [.resultReady])
         XCTAssertEqual(coordinator.activeSession?.transcript, "recovered")
-        XCTAssertEqual((await provider.requests).count, 2)
+        let requests = await provider.requests
+        XCTAssertEqual(requests.count, 2)
         // Audio removed after the successful retry.
         XCTAssertNil(coordinator.activeSession?.audioURL)
     }
