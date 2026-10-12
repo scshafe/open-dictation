@@ -21,7 +21,8 @@ final class MultipartTests: XCTestCase {
         let text = String(data: body, encoding: .utf8)!
         XCTAssertTrue(text.contains("Content-Disposition: form-data; name=\"file\"; filename=\"recording.wav\""))
         XCTAssertTrue(text.contains("Content-Type: audio/wav"))
-        XCTAssertTrue(body.suffix("BOUNDARY--\r\n".utf8.count).elementsEqual(Data("--BOUNDARY--\r\n".utf8)))
+        let closingBoundary = Data("--BOUNDARY--\r\n".utf8)
+        XCTAssertEqual(Data(body.suffix(closingBoundary.count)), closingBoundary)
         // Audio bytes embedded verbatim.
         XCTAssertTrue(body.range(of: audio) != nil)
     }
