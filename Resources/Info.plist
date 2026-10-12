@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Open Dictation</string>
+    <key>CFBundleDisplayName</key>
+    <string>Open Dictation</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.example.opendictation</string>
+    <key>CFBundleVersion</key>
+    <string>0.1.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.1.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleExecutable</key>
+    <string>OpenDictation</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <!-- Microphone usage: shown on first recording. Required; without it mic access fails. -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Open Dictation records audio from your microphone so it can be transcribed by the endpoint you configure. Recording only happens after you press Record or your dictation shortcut.</string>
+    <!-- Local-dev HTTP: narrow exception template is NOT enabled by default.
+         If your transcription endpoint is plain HTTP on LAN/localhost, see README
+         "Local HTTP endpoints" for the documented opt-in (rebuild required). -->
+</dict>
+</plist>

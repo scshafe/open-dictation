@@ -1,0 +1,13 @@
+{
+  "_note": "Non-secret example configuration. Enter these in the app Settings tab; nothing here is read automatically.",
+  "endpointURL": "http://127.0.0.1:8080/v1/audio/transcriptions",
+  "model": "",
+  "language": "",
+  "auth": "(paste bearer token into Settings; it is stored in Keychain, never in files)",
+  "selfHostedExamples": {
+    "whisper_cpp_server": "http://127.0.0.1:8080/inference  (verify field names against your server build)",
+    "faster_whisper_openai_compat": "http://127.0.0.1:8000/v1/audio/transcriptions",
+    "lan_machine": "http://192.168.1.50:8000/v1/audio/transcriptions",
+    "open_webui_embedded_stt": "https://<host>.<tailnet>.ts.net/api/v1/audio/transcriptions  (bearer = Open WebUI API key or session token; non-admins need chat.stt; leave model empty; language optional; timeouts 300/900 s for CPU)"
+  }
+}

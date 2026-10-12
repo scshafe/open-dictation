@@ -1,0 +1,26 @@
+.build/
+DerivedData/
+*.app/
+*.xcodeproj/
+xcuserdata/
+.DS_Store
+# Local run state: recordings, caches, credentials, machine files
+run/
+*.wav
+*.caf
+*.m4a
+config.local.json
+*.log
+scripts/codesign-identity.local
+
+# Private agent state and machine configuration
+.claude/
+.env
+.env.*
+!.env.example
+*.local
+*.local.json
+*.local.md
+.swiftpm/
+__pycache__/
+*.pyc
